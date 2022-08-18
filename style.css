@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-h1,h2,h3,h4,h5,h6,span{
+h1,h2,h3,h4,h5,h6 span{
   color: #242424;
   text-align: center;
   line-height: 1.25;
@@ -43,7 +43,7 @@ li{
   margin: 0 auto;
 }
 
-.text-purple {
+.text--purple {
   color: #6030b1;
 }
 
@@ -167,17 +167,20 @@ nav{
 .lanuage__img{
   width: 100%;
   max-width: 100px;
-  transition: all 300ms;
 }
 
-.language__img:hover {
+.language:hover .language__img {
   filter: brightness(80%);
   opacity: 0.86;
   transform: scale(0.9);
+  transition: all 300ms ease;
 }
 
 .language {
   width: 25%;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
 
 .language__img--wrapper {
@@ -191,4 +194,18 @@ nav{
   display: flex;
   width: 100%;
   flex-wrap: wrap;
+}
+
+.language__name {
+  position: absolute;
+  bottom: 0;
+  transform: scale(0);
+  transition: all 300ms;
+  font-size: 20px;
+  opacity: 0;
+}
+
+.language:hover .language__name{
+  transform: scale(1);
+  opacity: 1;
 }
